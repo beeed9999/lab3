@@ -1,16 +1,26 @@
-print("Конвертер температур")
-print("1. Из °C в °F")
-print("2. Из °F в °C")
+print("Конвертер валют")
+print("1. USD (Доллары) -> RUB (Рубли)")
+print("2. RUB (Рубли) -> USD (Доллары)")
+print("3. EUR (Евро) -> RUB (Рубли)")
+print("4. RUB (Рубли) -> EUR (Евро)")
 
-choice = input("Ваш выбор (1/2): ")
+choice = input("Выберите направление конвертации (1-4): ")
+
+# Задаем курсы валют (вы можете изменить их на актуальные)
+USD_RATE = 92.0  # 1 доллар = 92 рубля
+EUR_RATE = 100.0 # 1 евро = 100 рублей
 
 if choice == "1":
-    celsius = float(input("Введите температуру в °C: "))
-    fahrenheit = celsius * 9/5 + 32
-    print(f"{celsius:.1f}°C = {fahrenheit:.1f}°F")
+    amount = float(input("Введите сумму в USD: "))
+    print(f"{amount:.2f} USD = {amount * USD_RATE:.2f} RUB")
 elif choice == "2":
-    fahrenheit = float(input("Введите температуру в °F: "))
-    celsius = (fahrenheit - 32) * 5/9
-    print(f"{fahrenheit:.1f}°F = {celsius:.1f}°C")
+    amount = float(input("Введите сумму в RUB: "))
+    print(f"{amount:.2f} RUB = {amount / USD_RATE:.2f} USD")
+elif choice == "3":
+    amount = float(input("Введите сумму в EUR: "))
+    print(f"{amount:.2f} EUR = {amount * EUR_RATE:.2f} RUB")
+elif choice == "4":
+    amount = float(input("Введите сумму в RUB: "))
+    print(f"{amount:.2f} RUB = {amount / EUR_RATE:.2f} EUR")
 else:
-    print("Некорректный выбор")
+    print("Некорректный выбор. Пожалуйста, введите число от 1 до 4.")
