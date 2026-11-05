@@ -1,8 +1,11 @@
-text = input("Введите строку: ")
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+c = float(input("Введите третье число: "))
 
-print(f"Длина: {len(text)}")
-print(f"Верхний регистр: {text.upper()}")
-print(f"Нижний регистр: {text.lower()}")
-print(f"Первый символ: {text[0]}")
-print(f"Последний символ: {text[-1]}")
-print(f"Количество пробелов: {text.count(' ')}")
+average = (a + b + c) / 3
+minimum = min(a, b, c)
+maximum = max(a, b, c)
+
+print(f"Среднее арифметическое: {average:.2f}")
+print(f"Минимум: {minimum}")
+print(f"Максимум: {maximum}")
